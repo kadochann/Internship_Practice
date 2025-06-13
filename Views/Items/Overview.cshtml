@@ -1,0 +1,29 @@
+﻿@using BookStoresWebAPI.Models 
+@model BookStoresWebAPI.ViewModels.BookOverviewViewModel
+@{  
+    ViewData["Title"] = "Book Overview";  
+}  
+<h1>@ViewData["Title"]</h1>  
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>Title</th>  
+            <th>Type</th>  
+            <th>Price</th>  
+        </tr>  
+    </thead>  
+    <tbody>   show 
+        @foreach (var book in Model.Books)  
+        {  
+            <tr>  
+                <td>@book.Title</td>  
+                <td>@book.Type</td>
+                <td>@(book.Price.HasValue? book.Price.Value.ToString("0.00") : "")</td>
+                <td>
+                </td>  
+            </tr>  
+        }  
+    </tbody>  
+</table>
+
+}
