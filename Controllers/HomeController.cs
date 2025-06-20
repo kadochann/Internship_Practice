@@ -10,16 +10,20 @@ namespace BookStoresWebAPI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly BookStoresDbContext _context;   // Injecting the DbContext to access the database
-        public HomeController(BookStoresDbContext context)
+        private readonly BookStoresDbContext _context;
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(BookStoresDbContext context, ILogger<HomeController> logger)
         {
             _context = context;
+            _logger = logger;
         }
+
         public async Task<IActionResult> Index()
         {
-            var item = await _context.Books.ToListAsync(); // async/await allows us to wait for the database operation
-                                                           // to complete without blocking the thread
-            return View(item);// Passing all the data we got from the database to the view
+            _logger.LogInformation("Index action in HomeController was accessed.");
+            var item = await _context.Books.ToListAsync();
+            return View(item);
         }
 
         public IActionResult Error()
@@ -30,6 +34,6 @@ namespace BookStoresWebAPI.Controllers
             };
             return View(model);
         }
-        
     }
+
 }

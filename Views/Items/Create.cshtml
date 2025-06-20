@@ -1,35 +1,58 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model BookStoresWebAPI.Models.Book
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers  
+@model BookStoresWebAPI.ViewModels.BookCreateViewModel
+@{  
+    ViewData["Title"] = "Create Book";  
+    // Initialize the book object if it is null to avoid null reference errors in the view  
+}  
+<div class="text-box">
+<h1>Add Book to Database</h1>  
+</div>
 
-@{
-	ViewData["Title"] = "Create Book";
-	// Initialize the book object if it is null to avoid null reference errors in the view
-}
-<h1>Create</h1>
-<form asp-action="Create" method="post">
-	@Html.AntiForgeryToken()
-	<div class="form-group">
+<form asp-action="Create" method="post">  
+    @Html.AntiForgeryToken()  
+    <div class="form-group">
+    <div class="text-box">
 		<label asp-for="Title">Title</label>
-		<input asp-for="Title" class="form-control" />
-		<span asp-validation-for="Title" class="text-danger"></span><!-- this makes the title field required to fill-->
-	</div>
-	<div>
+        <input asp-for="Title" class="form-control" />  
+        <span asp-validation-for="Title" class="text-danger"></span><!-- this makes the title field required to fill-->  
+        </div>
+    </div>  
+    <div>  
+    <div class="text-box">
 		<label asp-for="Price">Price</label>
-		<input asp-for="Price" class="form-control" />
-		<span asp-validation-for="Price" class="text-danger"></span>
-	</div>
-		<!---<div>
-		<label asp-for="BookAuthors">Author</label>
-		<input asp-for="BookAuthors" class="form-control" />
-		<span asp-validation-for="BookAuthors" class="text-danger"></span>
-		</div>
-			-->
-	<button type="submit" class="btn btn-primary">Create</button>
-</form>
-@section Scripts {
-	@{
-		await Html.RenderPartialAsync("_ValidationScriptsPartial");
-	}
-}
+        <input asp-for="Price" class="form-control" />  
+        <span asp-validation-for="Price" class="text-danger"></span>  
+        </div>
+    </div>
+    <div class="form-group">
+    <div class="text-box">
+		<label asp-for="AuthorFirstName">Author First Name</label>    
+        <input asp-for="AuthorFirstName" class="form-control" />
+        <span asp-validation-for="AuthorFirstName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+    <div class="text-box">
+        <label asp-for="AuthorLastName">Author Last Name</label>    
+        <input asp-for="AuthorLastName" class="form-control" />
+        <span asp-validation-for="AuthorLastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+    <div class="text-box">
+		<label asp-for="Type">Book Type</label>
+        <input asp-for="Type" class="form-control" />
+        <span asp-validation-for="Type" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>  
+
+
+</form>  
+@section Scripts {  
+    @{  
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");  
+    }  
+}  
 
 @* This view is used to create a new book. It includes a form with fields for the book's title and price. *@

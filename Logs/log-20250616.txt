@@ -1,0 +1,9 @@
+2025-06-16 14:30:57.591 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-16 14:31:40.259 +03:00 [INF] Create method called in ItemsController.
+2025-06-16 14:33:00.780 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-16 14:33:06.784 +03:00 [INF] Create method called in ItemsController.
+2025-06-16 14:33:16.143 +03:00 [INF] Create method called in ItemsController.
+2025-06-16 14:33:27.171 +03:00 [INF] Create method called in ItemsController.
+2025-06-16 14:33:28.272 +03:00 [INF] Overview method called in ItemsController.
+2025-06-16 14:33:34.654 +03:00 [INF] Delete method called in ItemsController for book with ID 44.
+2025-06-16 14:33:34.745 +03:00 [INF] Overview method called in ItemsController.

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -7,22 +6,8 @@ using Microsoft.EntityFrameworkCore;
 namespace BookStoresWebAPI.Models;
 
 [Table("User")]
-public partial class User
+public class User : IdentityUser<int> // <--- T burada int oldu
 {
-    [Key]
-    [Column("user_id")]
-    public int UserId { get; set; }
-
-    [Column("email_address")]
-    [StringLength(100)]
-    [Unicode(false)]
-    public string EmailAddress { get; set; } = null!;
-
-    [Column("password")]
-    [StringLength(100)]
-    [Unicode(false)]
-    public string Password { get; set; } = null!;
-
     [Column("source")]
     [StringLength(100)]
     [Unicode(false)]
@@ -43,8 +28,8 @@ public partial class User
     [Unicode(false)]
     public string? LastName { get; set; }
 
-    [Column("role_id")]
-    public short RoleId { get; set; }
+    [Column("RoleId")]
+    public int RoleId { get; set; }
 
     [Column("pub_id")]
     public int PubId { get; set; }

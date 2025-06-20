@@ -16,9 +16,27 @@ html {
   position: relative;
   min-height: 100%;
 }
+.text-box {
+    display: inline-block; /* Geniþliði içeriðe göre ayarla */
+    background-color: rgba(255, 255, 255, 0.85); /* Beyaz ama %85 saydam */
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-bottom: 6px;
+}
+.secondary-text {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem; /* Ýstersen arttýr */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Daha okunaklý */
+}
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url('/images/lib.jpeg');
+    background-size: cover;
+    
+}
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -29,3 +47,13 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+.btn-primary {
+    background-color: #6a0dad;
+    border: none;
+}
+
+/*body {
+    background-color: #f0f0f0;
+}
+    */

@@ -210,8 +210,6 @@ C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\compressed\wtftjaz895-2
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\compressed\h2y58mv8zj-muycvpuwrr.gz
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\compressed\omper4jrgx-87fc7y1x7t.gz
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\compressed\8g1346uw4u-mlv21k5csn.gz
-C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\compressed\whr5snjovk-9kuit94hhq.gz
-C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\compressed\z1y28b89e0-9kuit94hhq.gz
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\staticwebassets.development.json
@@ -223,3 +221,5 @@ C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\Staj-Sureci.pdb
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\Staj-Sureci.genruntimeconfig.cache
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\ref\Staj-Sureci.dll
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\compressed\whr5snjovk-m9lv0k3ag1.gz
+C:\Users\Casper\Desktop\ASP.NET\Deneme2\obj\Debug\net9.0\compressed\z1y28b89e0-m9lv0k3ag1.gz

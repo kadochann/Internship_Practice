@@ -1,29 +1,37 @@
-﻿@using BookStoresWebAPI.Models 
-@model BookStoresWebAPI.ViewModels.BookOverviewViewModel
-@{  
-    ViewData["Title"] = "Book Overview";  
-}  
-<h1>@ViewData["Title"]</h1>  
-<table class="table">  
-    <thead>  
-        <tr>  
-            <th>Title</th>  
-            <th>Type</th>  
-            <th>Price</th>  
-        </tr>  
-    </thead>  
-    <tbody>   show 
-        @foreach (var book in Model.Books)  
-        {  
-            <tr>  
-                <td>@book.Title</td>  
-                <td>@book.Type</td>
-                <td>@(book.Price.HasValue? book.Price.Value.ToString("0.00") : "")</td>
+﻿@model IEnumerable<BookStoresWebAPI.ViewModels.BookWithAuthorVM>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using System.Globalization
+
+<div class="text-box">
+	<h1>Book Overview</h1>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Authors</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            
+            <tr>
+                
+                <td>@book.Title</td>
+				<td>@book.Type</td>	
+                <td>@book.Price?.ToString("0.00")</td>
+				<td>@string.Join(", ", book.AuthorNames)</td>
+				
                 <td>
-                </td>  
-            </tr>  
-        }  
-    </tbody>  
+                    <a asp-action="Delete" asp-route-id="@book.BookId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
 
-}

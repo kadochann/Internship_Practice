@@ -2,7 +2,13 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<div class="text-box">
     <h1 class="display-4">Welcome</h1>
-    
+	<h2 class="lead">This is a simple library application, made by ASP.NET</h2>
+	<p>Use the navigation bar to explore the application.</p>
+    <p>To get started, you can register a new account or log in if you already have one.</p>
+</div>
+<div>
+    <a class="btn btn-primary" href="@Url.Action("Register", "Account")">Register</a>
+    <a class="btn btn-secondary" href="@Url.Action("Login", "Account")">Login</a>
 </div>

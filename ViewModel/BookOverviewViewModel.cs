@@ -1,8 +1,11 @@
 ﻿namespace BookStoresWebAPI.ViewModels
 {
-    public class BookOverviewViewModel
+    public class BookWithAuthorVM
     {
-        public IEnumerable<BookStoresWebAPI.Models.Book> Books { get; set; } //IEnumerable Book instead of List<Book> for flexibility
-        public IEnumerable<BookStoresWebAPI.Models.Author> Authors { get; set; }
+        public int BookId { get; set; }= 0;
+        public string Title { get; set; } = "";
+        public string Type { get; set; } = "";
+        public decimal? Price { get; set; }
+        public List<string> AuthorNames { get; set; } = new();
     }
 }

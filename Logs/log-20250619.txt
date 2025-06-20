@@ -1,0 +1,294 @@
+2025-06-19 08:41:13.870 +03:00 [ERR] Failed executing DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Author] (
+    [author_id] int NOT NULL IDENTITY,
+    [last_name] varchar(40) NOT NULL,
+    [first_name] varchar(20) NOT NULL,
+    [phone] char(12) NOT NULL DEFAULT 'UNKNOWN',
+    [address] varchar(40) NULL,
+    [city] varchar(20) NULL,
+    [state] char(2) NULL,
+    [zip] char(5) NULL,
+    [email_address] varchar(100) NULL,
+    CONSTRAINT [PK__Author__86516BCFCC610736] PRIMARY KEY ([author_id])
+);
+2025-06-19 08:42:52.552 +03:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Author] (
+    [author_id] int NOT NULL IDENTITY,
+    [last_name] varchar(40) NOT NULL,
+    [first_name] varchar(20) NOT NULL,
+    [phone] char(12) NOT NULL DEFAULT 'UNKNOWN',
+    [address] varchar(40) NULL,
+    [city] varchar(20) NULL,
+    [state] char(2) NULL,
+    [zip] char(5) NULL,
+    [email_address] varchar(100) NULL,
+    CONSTRAINT [PK__Author__86516BCFCC610736] PRIMARY KEY ([author_id])
+);
+2025-06-19 09:14:07.415 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 09:15:04.710 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 09:15:10.480 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.AspNetCore.Identity.SignInManager`1[BookStoresWebAPI.Models.User]' while attempting to activate 'BookStoresWebAPI.Controllers.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method50(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-19 09:24:20.337 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 09:24:34.742 +03:00 [INF] User Kadriye registered successfully.
+2025-06-19 09:24:34.753 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 09:24:46.681 +03:00 [ERR] Error: Model is not valid.
+2025-06-19 09:31:22.070 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 09:31:33.568 +03:00 [ERR] Error: Model is not valid.
+2025-06-19 09:36:06.161 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 09:36:25.605 +03:00 [ERR] Error: Model is not valid.
+2025-06-19 09:46:41.704 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'BookStoresWebAPI.Controllers.AccountController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfoEx[] constructors, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactoryInternal(Type instanceType, Type[] argumentTypes, ParameterExpression& provider, ParameterExpression& argumentArray, Expression& factoryExpressionBody)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerRequestDelegateFactory.<>c__DisplayClass12_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-19 09:46:55.399 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'BookStoresWebAPI.Controllers.AccountController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfoEx[] constructors, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactoryInternal(Type instanceType, Type[] argumentTypes, ParameterExpression& provider, ParameterExpression& argumentArray, Expression& factoryExpressionBody)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerRequestDelegateFactory.<>c__DisplayClass12_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-19 09:47:22.896 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 09:47:35.415 +03:00 [INF] Login is successfull...
+2025-06-19 09:47:35.427 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 10:02:33.034 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 10:25:23.791 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 10:25:26.983 +03:00 [INF] Create method called in ItemsController.
+2025-06-19 10:25:38.495 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 10:26:08.168 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 12:00:13.998 +03:00 [ERR] Failed executing DbCommand (40ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-06-19 12:00:14.053 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BookStoresWebAPI.Data.BookStoresDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b4396198-9d02-4e8b-b4b2-2b55b5e94d65
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b4396198-9d02-4e8b-b4b2-2b55b5e94d65
+Error Number:208,State:1,Class:16
+2025-06-19 12:00:14.065 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.SignInManager`1.ValidateSecurityStampAsync(ClaimsPrincipal principal)
+   at Microsoft.AspNetCore.Identity.SecurityStampValidator`1.ValidateAsync(CookieValidatePrincipalContext context)
+   at Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:b4396198-9d02-4e8b-b4b2-2b55b5e94d65
+Error Number:208,State:1,Class:16
+2025-06-19 12:04:14.706 +03:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Author] (
+    [author_id] int NOT NULL IDENTITY,
+    [last_name] varchar(40) NOT NULL,
+    [first_name] varchar(20) NOT NULL,
+    [phone] char(12) NOT NULL DEFAULT 'UNKNOWN',
+    [address] varchar(40) NULL,
+    [city] varchar(20) NULL,
+    [state] char(2) NULL,
+    [zip] char(5) NULL,
+    [email_address] varchar(100) NULL,
+    CONSTRAINT [PK__Author__86516BCFCC610736] PRIMARY KEY ([author_id])
+);
+2025-06-19 12:07:50.672 +03:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Author] (
+    [author_id] int NOT NULL IDENTITY,
+    [last_name] varchar(40) NOT NULL,
+    [first_name] varchar(20) NOT NULL,
+    [phone] char(12) NOT NULL DEFAULT 'UNKNOWN',
+    [address] varchar(40) NULL,
+    [city] varchar(20) NULL,
+    [state] char(2) NULL,
+    [zip] char(5) NULL,
+    [email_address] varchar(100) NULL,
+    CONSTRAINT [PK__Author__86516BCFCC610736] PRIMARY KEY ([author_id])
+);
+2025-06-19 12:10:11.422 +03:00 [ERR] Failed executing DbCommand (39ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-06-19 12:10:11.474 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BookStoresWebAPI.Data.BookStoresDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c39fbbcf-83b8-4725-a7b0-11296c2f12da
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c39fbbcf-83b8-4725-a7b0-11296c2f12da
+Error Number:208,State:1,Class:16
+2025-06-19 12:10:11.486 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.SignInManager`1.ValidateSecurityStampAsync(ClaimsPrincipal principal)
+   at Microsoft.AspNetCore.Identity.SecurityStampValidator`1.ValidateAsync(CookieValidatePrincipalContext context)
+   at Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:c39fbbcf-83b8-4725-a7b0-11296c2f12da
+Error Number:208,State:1,Class:16
+2025-06-19 12:17:18.571 +03:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Author] (
+    [author_id] int NOT NULL IDENTITY,
+    [last_name] varchar(40) NOT NULL,
+    [first_name] varchar(20) NOT NULL,
+    [phone] char(12) NOT NULL DEFAULT 'UNKNOWN',
+    [address] varchar(40) NULL,
+    [city] varchar(20) NULL,
+    [state] char(2) NULL,
+    [zip] char(5) NULL,
+    [email_address] varchar(100) NULL,
+    CONSTRAINT [PK__Author__86516BCFCC610736] PRIMARY KEY ([author_id])
+);
+2025-06-19 12:37:55.688 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 12:38:03.050 +03:00 [INF] Create method called in ItemsController.
+2025-06-19 12:38:09.508 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 12:39:24.139 +03:00 [INF] Create method called in ItemsController.
+2025-06-19 12:40:00.717 +03:00 [INF] Create method called in ItemsController.
+2025-06-19 12:40:13.653 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 12:44:28.577 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 12:44:49.074 +03:00 [INF] Create method called in ItemsController.
+2025-06-19 12:44:59.534 +03:00 [INF] Create method called in ItemsController.
+2025-06-19 12:45:55.854 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 13:47:33.425 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 13:48:03.348 +03:00 [ERR] Register failed. Error: Microsoft.AspNetCore.Identity.IdentityError has occured.
+2025-06-19 13:48:24.338 +03:00 [ERR] Register failed. Error: Microsoft.AspNetCore.Identity.IdentityError has occured.
+2025-06-19 13:48:35.479 +03:00 [ERR] Register failed. Error: Microsoft.AspNetCore.Identity.IdentityError has occured.
+2025-06-19 13:50:06.601 +03:00 [ERR] Register failed. Error: Microsoft.AspNetCore.Identity.IdentityError has occured.
+2025-06-19 13:50:13.103 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 13:50:25.124 +03:00 [ERR] Failed to login.
+2025-06-19 13:51:14.296 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 13:51:16.576 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 13:51:16.960 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 13:55:48.301 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 13:56:10.683 +03:00 [ERR] Register failed. Error: Microsoft.AspNetCore.Identity.IdentityError has occured.
+2025-06-19 13:56:20.612 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 13:56:54.614 +03:00 [ERR] Failed to login.
+2025-06-19 14:00:02.057 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 14:00:28.854 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 14:00:46.125 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 14:00:59.896 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 14:01:10.728 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 14:01:24.387 +03:00 [ERR] Failed to login.
+2025-06-19 15:34:16.675 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 15:34:28.107 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 15:34:35.540 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 15:37:42.317 +03:00 [INF] Overview method called in ItemsController.
+2025-06-19 15:38:12.378 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 15:38:30.975 +03:00 [ERR] Register failed. Error: Microsoft.AspNetCore.Identity.IdentityError has occured.
+2025-06-19 15:38:44.098 +03:00 [ERR] Register failed. Error: Microsoft.AspNetCore.Identity.IdentityError has occured.
+2025-06-19 15:38:51.457 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 15:39:02.011 +03:00 [ERR] Failed to login.
+2025-06-19 15:46:04.482 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 15:46:28.805 +03:00 [ERR] Register failed: Username 'Harmancı' is invalid, can only contain letters or digits.
+2025-06-19 15:46:45.369 +03:00 [INF] User Harmanci registered successfully.
+2025-06-19 15:46:45.378 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 15:49:37.347 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-19 15:50:12.068 +03:00 [INF] Index action in HomeController was accessed.

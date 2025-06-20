@@ -1,0 +1,88 @@
+2025-06-20 08:57:47.440 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 08:57:59.339 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 09:07:28.891 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 09:07:38.828 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 09:08:19.488 +03:00 [INF] Delete method called in ItemsController for book with ID 46.
+2025-06-20 09:08:19.521 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 09:08:23.174 +03:00 [INF] Delete method called in ItemsController for book with ID 47.
+2025-06-20 09:08:23.213 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 09:23:02.707 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 09:23:11.693 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 09:23:37.509 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 09:26:51.411 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 09:26:54.828 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 09:27:11.232 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 09:32:23.340 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 09:32:36.023 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 09:32:44.404 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 09:42:51.800 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 09:50:02.407 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 09:51:01.565 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 09:51:10.383 +03:00 [INF] Delete method called in ItemsController for book with ID 49.
+2025-06-20 09:51:10.409 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 09:57:03.464 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 09:57:25.936 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 09:57:46.819 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 09:58:05.010 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 10:07:38.837 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 10:09:24.727 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 10:09:45.757 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 10:10:40.759 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 10:11:50.219 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 10:15:20.337 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 10:48:34.402 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 10:48:46.227 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 10:49:13.546 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 10:49:20.078 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 10:49:51.589 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 10:50:32.613 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 10:53:17.763 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 10:53:23.066 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 10:53:31.966 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 10:54:03.989 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:00:09.707 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:01:47.656 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:02:08.133 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:11:49.744 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 11:22:48.655 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 11:25:59.892 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 11:27:40.272 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 11:28:54.570 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 11:31:17.219 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 11:31:31.164 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:31:44.347 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:35:41.224 +03:00 [WRN] The static asset '/images/lib.jpeg' was not found in the built time manifest. This file will not be available at runtime if it is not available at compile time during the publish process. If the file was not added to the project during development, and is created at runtime, use the StaticFiles middleware to serve it instead.
+2025-06-20 11:37:19.605 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:37:19.814 +03:00 [WRN] The static asset '/images/lib.jpeg' was not found in the built time manifest. This file will not be available at runtime if it is not available at compile time during the publish process. If the file was not added to the project during development, and is created at runtime, use the StaticFiles middleware to serve it instead.
+2025-06-20 11:37:26.751 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 11:39:00.390 +03:00 [INF] Create method called in ItemsController.
+2025-06-20 11:39:00.606 +03:00 [WRN] The static asset '/images/lib.jpeg' was not found in the built time manifest. This file will not be available at runtime if it is not available at compile time during the publish process. If the file was not added to the project during development, and is created at runtime, use the StaticFiles middleware to serve it instead.
+2025-06-20 11:39:04.131 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:40:05.171 +03:00 [WRN] The static asset '/images/lib.jpeg' was not found in the built time manifest. This file will not be available at runtime if it is not available at compile time during the publish process. If the file was not added to the project during development, and is created at runtime, use the StaticFiles middleware to serve it instead.
+2025-06-20 11:40:18.487 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:40:22.908 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:45:45.770 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:46:11.833 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:46:30.699 +03:00 [ERR] Failed to login.
+2025-06-20 11:48:36.990 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:49:07.174 +03:00 [ERR] Failed to login.
+2025-06-20 11:49:25.554 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:49:35.865 +03:00 [INF] User Kadriye registered successfully.
+2025-06-20 11:49:35.877 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 11:49:40.917 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 11:49:52.127 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:50:11.494 +03:00 [ERR] Register failed: Username 'Harmancı' is invalid, can only contain letters or digits.
+2025-06-20 11:50:31.372 +03:00 [ERR] Register failed: Username 'Harmanci' is already taken.
+2025-06-20 11:50:40.979 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:50:51.502 +03:00 [ERR] Failed to login.
+2025-06-20 11:51:06.681 +03:00 [INF] Login is successfull...
+2025-06-20 11:51:34.426 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-20 11:51:48.707 +03:00 [INF] Login is successfull...
+2025-06-20 11:51:48.720 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 11:51:59.193 +03:00 [INF] Delete method called in ItemsController for book with ID 50.
+2025-06-20 11:51:59.303 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 11:54:28.256 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 11:57:48.145 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 11:57:53.582 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 11:58:29.163 +03:00 [INF] Overview method called in ItemsController.
+2025-06-20 11:59:10.791 +03:00 [INF] Overview method called in ItemsController.
