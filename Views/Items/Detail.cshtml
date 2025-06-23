@@ -1,0 +1,40 @@
+﻿@model BookStoresWebAPI.ViewModels.BookCreateViewModel
+<div class="text-box">
+	<h1>Book Details</h1>
+</div>
+<h3 style="color: antiquewhite">Title: @Model.Title</h3>
+<h4 style="color: antiquewhite">Authors:
+	@Model.AuthorFirstName @Model.AuthorLastName
+</h4>
+
+<!-- Fotoğraf yükleme -->
+
+	<form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+	@Html.AntiForgeryToken()
+	<div style="color: antiquewhite">
+		<input type="hidden" name="id" value="@Model.Id" />
+		<input type="file" name="imageFile" />
+		<div>
+			<button type="submit">Upload</button>
+		</div>
+	</div>
+	<p style="color:white">Resim yolu: @Model.ImagePath</p>
+
+	</form>
+	
+
+@if (!string.IsNullOrEmpty(Model.ImagePath))
+{
+	<img src="@Model.ImagePath" style="max-width: 200px; float: right; margin: 10px;" />
+}
+
+<!--Özet kısmı gösterme-->
+@if (!string.IsNullOrEmpty(Model.Notes))
+{
+		<h6 style="color: AppWorkspace"><strong>Summary:</strong></h6>
+	<div class="form-group">
+		<textarea asp-for="Notes" class="form-control" rows="5">Text</textarea>
+		<span asp-validation-for="Notes" class="text-danger"></span>
+	</div>
+}
+
