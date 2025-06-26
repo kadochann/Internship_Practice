@@ -66,8 +66,9 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\js\site.js
+C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\css\site.css
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\favicon.ico
+C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\js\site.js
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -127,4 +128,3 @@ C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\lib\jquery\dist\jquery.slim.js
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\lib\jquery\dist\jquery.slim.min.js
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\lib\jquery\dist\jquery.slim.min.map
 C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\lib\jquery\LICENSE.txt
-C:\Users\Casper\Desktop\ASP.NET\Deneme2\wwwroot\css\site.css
