@@ -1,4 +1,8 @@
 ﻿<!DOCTYPE html>
+@using Microsoft.AspNetCore.Identity
+@using BookStoresWebAPI.Models.Identity  <!-- User Class's definition folder -->
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -26,7 +30,37 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Items" asp-action="Overview">Overview</a>
+                        </li>
+                        <ul class="navbar-nav ms-auto">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <span class="nav-link text-dark">Welcome, @User.Identity.Name</span>
+                                </li>
+                                <li class="nav-item">
+                                    <form asp-controller="Account" asp-action="Logout" method="post">
+                                        <button class="btn btn-link nav-link text-dark" type="submit">Logout</button>
+                                    </form>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Register</a>
+                                </li>
+                            }
+              
+                                
+                            
+
+                        </ul>
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -45,6 +79,18 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function showPermissionPopup() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Yetkisiz Deneme',
+                text: 'Bu işlemi sadece admin kullanıcılar yapabilir!',
+                confirmButtonText: 'Tamam'
+            });
+        }
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

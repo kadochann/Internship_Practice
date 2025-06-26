@@ -106,6 +106,9 @@ namespace StajSureci.Migrations
                         .HasColumnType("money")
                         .HasColumnName("advance");
 
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Notes")
                         .HasMaxLength(200)
                         .IsUnicode(false)

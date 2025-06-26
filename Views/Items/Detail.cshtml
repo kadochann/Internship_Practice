@@ -1,40 +1,77 @@
 ﻿@model BookStoresWebAPI.ViewModels.BookCreateViewModel
-<div class="text-box">
-	<h1>Book Details</h1>
-</div>
-<h3 style="color: antiquewhite">Title: @Model.Title</h3>
-<h4 style="color: antiquewhite">Authors:
-	@Model.AuthorFirstName @Model.AuthorLastName
-</h4>
+@using Microsoft.AspNetCore.Identity
+@using BookStoresWebAPI.Models.Identity
+@inject UserManager<AppUser> UserManager
+@inject SignInManager<AppUser> SignInManager
 
-<!-- Fotoğraf yükleme -->
+<style>
+	body {
+		background-image: url('/images/background.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+	}
+</style>
 
-	<form asp-action="UploadImage" method="post" enctype="multipart/form-data">
-	@Html.AntiForgeryToken()
-	<div style="color: antiquewhite">
-		<input type="hidden" name="id" value="@Model.Id" />
-		<input type="file" name="imageFile" />
-		<div>
-			<button type="submit">Upload</button>
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+	<!-- left hanside -->
+	<div style="flex: 1;">
+		<h1 style="color: black;">Book Details</h1>
+		<h3 style="color:black;">Title: @Model.Title</h3>
+		<h4 style="color: black;">Authors: @Model.AuthorFirstName @Model.AuthorLastName</h4>
+
+		@if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+		{ 
+			//image upload part 
+
+			<form asp-action="UploadImage" method="post" enctype="multipart/form-data" style="margin-top: 10px;">
+				@Html.AntiForgeryToken()
+				<div>
+				<input type="hidden" name="id" value="@Model.Id" />
+				<label style="color: black">Upload new image:</label>
+				
+				</div>
+				
+				<input type="file" name="imageFile" />
+				<div>
+					<button type="submit" class="btn btn-primary">Upload</button>
+				</div>
+				
+			</form>
+
+			//text edit part
+
+			<form asp-action="Detail_edit" method="post" style="margin-top: 15px;">
+				@Html.AntiForgeryToken()
+				<input type="hidden" asp-for="Id" />
+				<label for="Notes" style="color: antiquewhite">Summary:</label>
+				<textarea asp-for="Notes" class="form-control"
+						  rows="5"
+						  style="background-color: rgba(255,255,255,0.1); color: black; font-size: 1.6rem ;"></textarea>
+				<button type="submit" class="btn btn-success mt-2">Save</button>
+			</form>
+		}
+		else
+		{
+			if (!string.IsNullOrEmpty(Model.Notes))
+			{
+				<div style="color: white; background-color: rgba(255,255,255,0.1); font-size: 1.2rem;
+							border: 1px solid rgba(255,255,255,0.3); padding: 10px; border-radius: 5px;">
+					@Model.Notes
+				</div>
+			}
+		}
+	</div>
+
+	<!-- SAĞ TARAF (GÖRSEL) -->
+	@if (!string.IsNullOrEmpty(Model.ImagePath))
+	{
+		<div style="border: 2px solid #ccc; padding: 5px;
+                background-color: #222; border-radius: 5px; box-shadow: 0 0 10px rgba(255,255,255,0.2);">
+			<img src="@Model.ImagePath"
+				 alt="Book Image"
+				 style="max-width: 180px; max-height: 240px; display: block;" />
 		</div>
-	</div>
-	<p style="color:white">Resim yolu: @Model.ImagePath</p>
-
-	</form>
-	
-
-@if (!string.IsNullOrEmpty(Model.ImagePath))
-{
-	<img src="@Model.ImagePath" style="max-width: 200px; float: right; margin: 10px;" />
-}
-
-<!--Özet kısmı gösterme-->
-@if (!string.IsNullOrEmpty(Model.Notes))
-{
-		<h6 style="color: AppWorkspace"><strong>Summary:</strong></h6>
-	<div class="form-group">
-		<textarea asp-for="Notes" class="form-control" rows="5">Text</textarea>
-		<span asp-validation-for="Notes" class="text-danger"></span>
-	</div>
-}
-
+	}
+</div>

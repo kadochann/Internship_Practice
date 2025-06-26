@@ -10,11 +10,13 @@
         <div class="text-box">
 			<label asp-for="UserName"></label>
 		</div>
-        <input asp-for="UserName" class="form-control" />
-        <span asp-validation-for="UserName" class="text-danger" />
-    </div>
+        
+    </div><div class="text-box">
+			<input asp-for="UserName" class="form-control" id="UserName" />
+			<span id="username-error" class="text-danger"></span>
+		</div>
     <div class="secondary-text">
-        <p>(kullanıcı isminizde türkçe karakter bulunmaması gerekmektedir)</p>
+        <p>(username shouldn't contain any special charactesrs)</p>
     </div>
     <div class="form-group">
         <div class="text-box">
@@ -32,7 +34,7 @@
         <span asp-validation-for="Password" class="text-danger" />
     </div>
     <div class="secondary-text">
-        <p>(şifreniz en az 4 haneli olmalıdır)</p>
+        <p>(password should be at least 4 letters long.)</p>
     </div>
     <div class="form-group">
         <div class="text-box">
@@ -41,12 +43,70 @@
         <input asp-for="ConfirmPassword" class="form-control" />
         <span asp-validation-for="ConfirmPassword" class="text-danger" />
     </div>
-    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="submit" class="btn btn-primary" id="RegisterBtn">Register</button>
+
 </form>
 
 
 @section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const usernameInput = document.getElementById("UserName");
+            const errorSpan = document.getElementById("username-error");
+            const submitButton = document.getElementById("RegisterBtn");
+            const form = document.querySelector("form[asp-action='Register']");
+
+            let timer;
+            let isUsernameValid = false; // bu flag’i takip edeceğiz
+
+            usernameInput.addEventListener("input", function () {
+                clearTimeout(timer);
+                const username = usernameInput.value.trim();
+
+                // 4 harf kontrolü
+                if (username.length < 4) {
+                    errorSpan.textContent = "Username must be at least 4 letters long.";
+                    submitButton.disabled = true;
+                    isUsernameValid = false;
+                    return;
+                }
+
+                // 400ms debounce ile server kontrolü
+                timer = setTimeout(() => {
+                    fetch(`/Account/IsUserNameAvailable?username=${encodeURIComponent(username)}`)
+                        .then(res => res.json())
+                        .then(isAvailable => {
+                            if (!isAvailable) {
+                                errorSpan.textContent = "This username has already taken.";
+                                submitButton.disabled = true;
+                                isUsernameValid = false;
+                            } else {
+                                errorSpan.textContent = "";
+                                submitButton.disabled = false;
+                                isUsernameValid = true;
+                            }
+                        }) 
+                        .catch(() => {
+                            errorSpan.textContent = "Cannot reach the server.";
+                            submitButton.disabled = true;
+                            isUsernameValid = false;
+                        });
+                }, 400);
+            });
+
+            // Form submit’e müdahale edelim
+            form.addEventListener("submit", function (e) {
+                // Eğer username valid değilse popup ve submit’i durdur
+                if (!isUsernameValid) {
+                    e.preventDefault();
+                    alert("Bu kullanıcı adı geçersiz veya alınmış. Lütfen başka bir kullanıcı adı seçin.");
+                }
+            });
+        });
+    </script>
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+

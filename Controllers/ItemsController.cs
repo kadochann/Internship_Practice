@@ -2,6 +2,7 @@
 using BookStoresWebAPI.Models;
 using BookStoresWebAPI.ViewModel;
 using BookStoresWebAPI.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
@@ -46,6 +47,7 @@ namespace BookStoresWebAPI.Controllers
             return View(bookVMs);
         }
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             _logger.LogInformation("Create method called in ItemsController.");
@@ -54,6 +56,7 @@ namespace BookStoresWebAPI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(BookCreateViewModel model) //argüman olarak view model çünkü input oraya 
         {
             if (!ModelState.IsValid)
@@ -67,6 +70,7 @@ namespace BookStoresWebAPI.Controllers
                 Type = model.Type,
                 Price = model.Price,
                 PublishedDate = DateTime.Now,
+                Notes = model.Notes,
                 PubId = 1 // (örnek, değiştirilebilir)
             };
             _logger.LogInformation("Gelen fiyat değeri: {Price}", model.Price); // Moved outside of the object initializer
@@ -100,6 +104,7 @@ namespace BookStoresWebAPI.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var book = await _context.Books
@@ -145,6 +150,126 @@ namespace BookStoresWebAPI.Controllers
             await _context.SaveChangesAsync();
             
             return RedirectToAction("Overview");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Detail(int id)
+        {
+            _logger.LogInformation("Detail GET method called for book ID: {Id}", id);
+
+            var book = await _context.Books
+                .Include(b => b.BookAuthors)
+                .ThenInclude(ba => ba.Author)
+                .FirstOrDefaultAsync(b => b.BookId == id);
+
+            if (book == null)
+            {
+                _logger.LogWarning("Book with ID {Id} not found in Details method.", id);
+                return NotFound();
+            }
+
+            _logger.LogInformation("Book found. ImagePath from database: '{ImagePath}'", book.ImagePath ?? "NULL");
+
+            var firstAuthor = book.BookAuthors.FirstOrDefault()?.Author;
+            var viewModel = new BookCreateViewModel
+            {
+                Id = book.BookId,
+                Title = book.Title,
+                AuthorFirstName = firstAuthor?.FirstName ?? "",
+                AuthorLastName = firstAuthor?.LastName ?? "",
+                Notes = book.Notes,
+                Price = book.Price ?? 0,
+                Type = book.Type,
+                ImagePath = book.ImagePath
+            };
+
+            _logger.LogInformation("ViewModel created. ImagePath in ViewModel: '{ImagePath}'", viewModel.ImagePath ?? "NULL");
+
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Detail_edit(BookCreateViewModel model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Model state is invalid when updating book.");
+                return View(model);
+            }
+
+            var book = await _context.Books
+                .Include(b => b.BookAuthors)
+                .ThenInclude(ba => ba.Author)
+                .FirstOrDefaultAsync(b => b.BookId == model.Id);
+
+            if (book == null) return NotFound();
+
+            // Kitap güncellemesi
+            book.Title = model.Title;
+            book.Type = model.Type;
+            book.Notes = model.Notes;
+            book.Price = model.Price;
+
+            // İlgili yazar güncellemesi (sadece ilk yazar için örnek)
+            var bookAuthor = book.BookAuthors.FirstOrDefault();
+            if (bookAuthor != null)
+            {
+                var author = await _context.Authors.FindAsync(bookAuthor.AuthorId);
+                if (author != null)
+                {
+                    author.FirstName = model.AuthorFirstName;
+                    author.LastName = model.AuthorLastName;
+                }
+            }
+
+            await _context.SaveChangesAsync();
+            TempData["Msg"] = "Kitap başarıyla güncellendi.";
+            return RedirectToAction("Overview");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UploadImage(int id, IFormFile imageFile)
+        {
+            var book = await _context.Books.FindAsync(id);
+            if (book == null)
+            {
+                TempData["Error"] = "Kitap bulunamadı.";
+                return RedirectToAction("Detail", new { id });
+            }
+
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                var fileName = $"{id}.jpg";
+                var filePath = Path.Combine(uploadsFolder, fileName);
+
+                using var stream = new FileStream(filePath, FileMode.Create);
+                await imageFile.CopyToAsync(stream);
+
+                // Veritabanına sadece Web yolunu kaydediyoruz
+                book.ImagePath = $"/images/{fileName}";
+
+                await _context.SaveChangesAsync();
+
+                TempData["Msg"] = "Fotoğraf başarıyla yüklendi.";
+            }
+            else
+            {
+                TempData["Error"] = "Geçersiz dosya.";
+            }
+            _logger.LogInformation("Veritabanına kaydedilen ImagePath: {Path}", book.ImagePath);
+
+
+            return RedirectToAction("Detail", new { id });
         }
     }
 }

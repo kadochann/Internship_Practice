@@ -45,6 +45,8 @@ public partial class Book
     [Column("published_date", TypeName = "datetime")]
     public DateTime PublishedDate { get; set; }
 
+    public string? ImagePath { get; set; } = "";
+
     [InverseProperty("Book")]
     public virtual ICollection<BookAuthor> BookAuthors { get; set; } = new List<BookAuthor>();
 

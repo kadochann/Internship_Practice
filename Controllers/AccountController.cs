@@ -1,5 +1,4 @@
-﻿using BookStoresWebAPI.Models;
-using BookStoresWebAPI.Models.Identity;
+﻿using BookStoresWebAPI.Models.Identity;
 using BookStoresWebAPI.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +23,15 @@ namespace BookStoresWebAPI.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> IsUserNameAvailable(string username) 
+        {
+            //this function is backend of the ajax 
+
+            var user = await _userManager.FindByNameAsync(username);
+            return Json(user == null); // if the name available, then true
+        }
+
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
@@ -34,9 +42,6 @@ namespace BookStoresWebAPI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                /*
-                 * Log.Error("Model state is invalid during registration attempt for user {UserName}.", model.UserName);
-                */
                 _logger.LogError("Login form model state is invalid.");
                 foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
                 {
@@ -44,6 +49,7 @@ namespace BookStoresWebAPI.Controllers
                 }
                 return View(model);
             }
+           
             var user = new AppUser
             {
                 UserName = model.UserName, // Username field in User model
@@ -61,9 +67,8 @@ namespace BookStoresWebAPI.Controllers
             {
                 foreach (var error in result.Errors)
                 {
-                    /*Log.Error($"Register failed. Error: {error} has occured.");
+                    Log.Error($"Register failed. Error: {error} has occured.");
                     ModelState.AddModelError("", error.Description);
-                    */
                     _logger.LogError("Register failed: {Error}", error.Description);
                 }
             }
@@ -112,6 +117,16 @@ namespace BookStoresWebAPI.Controllers
             }
 
 
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            TempData["Msg"] = "Logouted succesfully!";
+
+            return RedirectToAction("Index", "Home"); //the page we want direct the user to
         }
     }
 
