@@ -1,0 +1,20 @@
+2025-06-27 11:54:50.380 +03:00 [INF] Admin user already exists: Kadriye
+2025-06-27 11:54:52.294 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-27 11:57:12.101 +03:00 [INF] Login is successfull...
+2025-06-27 11:57:12.116 +03:00 [INF] Overview method called in ItemsController.
+2025-06-27 11:57:57.912 +03:00 [INF] Detail GET method called for book ID: 1
+2025-06-27 11:57:57.965 +03:00 [INF] Book found. ImagePath from database: '/images/1.jpg'
+2025-06-27 11:57:57.968 +03:00 [INF] ViewModel created. ImagePath in ViewModel: '/images/1.jpg'
+2025-06-27 11:59:20.060 +03:00 [INF] Overview method called in ItemsController.
+2025-06-27 11:59:36.514 +03:00 [INF] Index action in HomeController was accessed.
+2025-06-27 11:59:41.390 +03:00 [INF] Overview method called in ItemsController.
+2025-06-27 12:02:48.867 +03:00 [INF] Overview method called in ItemsController.
+2025-06-27 12:02:49.790 +03:00 [INF] Detail GET method called for book ID: 1
+2025-06-27 12:02:49.798 +03:00 [INF] Book found. ImagePath from database: '/images/1.jpg'
+2025-06-27 12:02:49.798 +03:00 [INF] ViewModel created. ImagePath in ViewModel: '/images/1.jpg'
+2025-06-27 12:04:22.829 +03:00 [INF] Detail GET method called for book ID: 1
+2025-06-27 12:04:22.864 +03:00 [INF] Book found. ImagePath from database: '/images/1.jpg'
+2025-06-27 12:04:22.865 +03:00 [INF] ViewModel created. ImagePath in ViewModel: '/images/1.jpg'
+2025-06-27 12:04:24.718 +03:00 [INF] Detail GET method called for book ID: 1
+2025-06-27 12:04:24.722 +03:00 [INF] Book found. ImagePath from database: '/images/1.jpg'
+2025-06-27 12:04:24.722 +03:00 [INF] ViewModel created. ImagePath in ViewModel: '/images/1.jpg'
